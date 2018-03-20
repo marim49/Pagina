@@ -3,9 +3,26 @@
   <head>
     <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    
+    
+    <div class="panel-body">
+        <h1 class="text-info mb-3 font-weight-normal text-center" ><%= title %></h1>
+        <h1 class="text-info mb-3 font-weight-normal text-center" >Welcome to <%= title %></h1>
+        <div class="login-page form-login">
+            <div class=" col-sm-8 col-sm-offset-2 form-group">
+                <button type="submit" class="form-control btn btn-md btn-primary " onclick="window.location.href='http://localhost:3000/account/signup';" value="SignUp">SignUp</button>
+            </div>
+            <div class="col-sm-8 col-sm-offset-2 form-group">
+                <button type="submit" class="form-control btn btn-md btn-primary " onclick="window.location.href='http://localhost:3000/account/login';" value="Login">Login</button>
+            </div>
+        </div>
+    </div>
   </body>
 </html>

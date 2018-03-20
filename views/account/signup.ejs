@@ -2,12 +2,19 @@
 <html>
   <head>
     <title>Criar conta</title>
+     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="refresh" url="http://localhost:3000/account/login">
+    <link rel='stylesheet' href='/stylesheets/style.css'/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   </head>
   <body>
-    <h1>Criar conta</h1>
     <% if (typeof success !== 'undefined') { %>
         <p>
-            <%= success %>
+            <%= success %>	
+            <meta http-equiv="refresh" content="5; http://localhost:3000/account/login">
         </p>
     <% } else { %>
         <% if (typeof error !== 'undefined') { %>
@@ -15,12 +22,32 @@
                 <%= error %>
             </p>
         <% } %>
-        <form action="signup" method="post">
-            <p>Usuário: <input type="text" name="username" /></p>
-            <p>Email: <input type="email" name="email" /></p>
-            <p>Senha: <input type="password" name="password" /></p>
-            <input type="submit" value="Criar usuário">
-        </form>
+        
+        <div class="panel-body">
+            <div class="login-page">
+                <form class ="form-signin"action="signup" method="post">
+                    <h1 class="text-info mb-3 font-weight-normal text-center">Create Account</h1>
+                    <br>
+                    <div class="form-group">
+                        <input type="text" name="username" class="form-control" placeholder="Input your username here" required autofocus/>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="email" class="form-control" placeholder="Input your email here"/>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control " name="password" minlength="8" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" placeholder="Input your password here"/>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-sm-8 col-sm-offset-2 ">
+                                <input type="submit" class="form-control btn btn-md btn-primary " value="Create User">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        
     <% } %>
   </body>
 </html>

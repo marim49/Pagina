@@ -2,18 +2,36 @@
 <html>
   <head>
     <title>Login</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel='stylesheet' href='/stylesheets/style.css'/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   </head>
-  <body>
-    <h1>Login</h1>
-    <% if (typeof error !== 'undefined') { %>
-        <p>
-            <%= error %>
-        </p>
-    <% } %>
-    <form action="login" method="post">
-        <p>Username: <input type="text" name="username" /></p>
-        <p>Senha: <input type="password" name="password" /></p>
-        <input type="submit" value="OK">
-    </form>
+  <body>  
+    <div class="painel-body login-page">
+      <form class "form-signin" action="login" method="post">
+        <h1 class="text-info mb-3 font-weight-normal text-center" >Login</h1>
+        <br>
+        <div class="form-group">
+          <input type="text" name="username" class="form-control" placeholder="Username" required autofocus/>
+        </div>
+        <div class="form-group">
+          <input type="password" name="password" class="form-control" placeholder="Password" required/>
+        </div>
+        <div class="form-group">
+          <input type="submit" class="btn btn-md btn-primary btn-block" value="OK">
+        </div>      
+        <div class="form-group">
+        <% if (typeof error !== 'undefined') { %>
+          <span class="alert alert-danger col-sm-8 col-sm-offset-2" role="alert">
+          <%= error %>
+          </span>
+        <% } %>
+        </div>
+          
+      </form>
+    </div>
   </body>
 </html>
